@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import Slider from "react-slick";
 import LoginSlider from "../../components/auth/Slider/LoginSlider";
 import LoginImage from "../../data/image-slider/login-image-slider-data.json";
-import { ILoginImage } from "../../interface/ILoginImage";
+import { ILoginImage } from "../../components/auth/Slider/interface/ILoginImage";
 
 const Login: React.FC = () => {
   const [loginImage] = useState<ILoginImage[]>(LoginImage);
