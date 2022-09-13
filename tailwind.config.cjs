@@ -14,6 +14,8 @@ module.exports = {
         secondary: "#4457FF",
         primaryDark: "#21222D",
         secondaryDark: "#7B7B81",
+        error: "#EE6F6E",
+        warning: "#FCD969",
       },
     },
   },

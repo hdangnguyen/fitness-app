@@ -6,6 +6,7 @@
 @layer base {
   body {
     @apply font-opens;
+    @apply text-slate-800;
   }
   h1 {
     @apply text-5xl;
