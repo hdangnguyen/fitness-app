@@ -1,5 +1,4 @@
-import React, { Component, useState } from "react";
-import Slider from "react-slick";
+import React, { useState } from "react";
 import LoginSlider from "../../components/auth/Slider/LoginSlider";
 import LoginImage from "../../data/image-slider/login-image-slider-data.json";
 import { ILoginImage } from "../../components/auth/Slider/interface/ILoginImage";
@@ -38,14 +37,14 @@ const Login: React.FC = () => {
 
             <div className="relative block mt-6">
               <input
-                className="peer w-full p-3 rounded focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
+                className="peer w-full p-3 rounded hover:ring-1 hover:ring-slate-300 focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
                 type="email"
                 placeholder="Email"
                 id="emailInput"
               />
               <label
                 htmlFor="emailInput"
-                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white transition-all bg-white"
+                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white peer-focus:text-slate-800 transition-all bg-white text-slate-500"
               >
                 Email
               </label>
@@ -55,14 +54,14 @@ const Login: React.FC = () => {
             </div>
             <div className="relative">
               <input
-                className="peer w-full p-3 rounded focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300"
+                className="peer w-full p-3 rounded hover:ring-1 hover:ring-slate-300 focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
                 type="password"
                 placeholder="Email"
                 id="passwordInput"
               />
               <label
                 htmlFor="passwordInput"
-                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white transition-all bg-white"
+                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white peer-focus:text-slate-800 transition-all bg-white text-slate-500"
               >
                 Password
               </label>
@@ -71,7 +70,7 @@ const Login: React.FC = () => {
             {/* ======input================================================ */}
 
             <a href="#">
-              <div className="bg-primary text-center font-bold border w-full rounded py-3 mt-10 text-white">
+              <div className="bg-primary text-center font-bold border w-full rounded py-3 mt-10 text-white hover:bg-primaryHover">
                 SUBMIT
               </div>
             </a>
