@@ -4,9 +4,12 @@ import LoginImage from "../../data/image-slider/login-image-slider-data.json";
 import { ILoginImage } from "../../components/slider/login-slider/interface/ILoginImage";
 import { signInWithGoogle } from "../../services/firebase/firebase";
 import { FcGoogle } from "react-icons/fc";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 const Login: React.FC = () => {
   const [loginImage] = useState<ILoginImage[]>(LoginImage);
+
   return (
     <div className="grid grid-cols-12 h-screen ">
       <div className="col-span-4 min-w-[560px] z-50 bg-white flex h-screen">
@@ -14,17 +17,19 @@ const Login: React.FC = () => {
           <h2 className="font-bold ">Sign in</h2>
           <p className="text-slate-500 my-3">
             New user?
-            <a className="text-primary" href="#">
+            <a className="text-primary hover:text-primaryHover" href="#">
               {" "}
               Create an account
             </a>
           </p>
-          <button
+          <Button
+            additionalClassName="w-full ring-slate-300 ring-1  hover:text-slate-600"
+            bgColor="white"
+            textColor="slate-500"
             onClick={signInWithGoogle}
-            className="bg-white text-slate-500 text-center border w-full rounded py-3 mt-10 font-semibold hover:shadow-hoverButton hover:text-slate-600 transition-all "
-          >
-            <FcGoogle className="inline mr-2 " size={20} /> Sign in with google
-          </button>
+            title="Login with google"
+            icon={<FcGoogle className="inline mr-2 " size={20} />}
+          />
 
           <div className="relative py-4">
             <div className="absolute inset-0 flex">
@@ -36,47 +41,33 @@ const Login: React.FC = () => {
           </div>
           <form>
             {/* ================================================= */}
-
             <div className="relative block mt-6">
-              <input
-                className="peer w-full p-3 rounded hover:ring-1 hover:ring-slate-300 focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
-                type="email"
-                placeholder="Email"
-                autoComplete="none"
+              <Input
                 id="emailInput"
+                label="Email"
+                placeHolder="Email"
+                onChange={() => {}}
+                type="email"
+                errorMessage="Please provide a valid email address"
               />
-              <label
-                htmlFor="emailInput"
-                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white peer-focus:text-slate-800 transition-all bg-white text-slate-500"
-              >
-                Email
-              </label>
-              <span className=" block invisible peer-invalid:visible text-primary text-sm mb-4 mt-1.5">
-                Please provide a valid email address.
-              </span>
             </div>
             <div className="relative">
-              <input
-                className="peer w-full p-3 rounded hover:ring-1 hover:ring-slate-300 focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
-                type="password"
-                placeholder="Email"
+              <Input
                 id="passwordInput"
+                label="Password"
+                placeHolder="Password"
+                onChange={() => {}}
+                type="password"
               />
-              <label
-                htmlFor="passwordInput"
-                className="absolute peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:bg-slate-100 peer-placeholder-shown:left-3 text-xs -top-3 left-2 peer-focus:text-xs peer-focus:-top-3 peer-focus:left-2 px-2 peer-focus:bg-white peer-focus:text-slate-800 transition-all bg-white text-slate-500"
-              >
-                Password
-              </label>
             </div>
-
-            {/* ======input================================================ */}
-
-            <a href="#">
-              <div className="bg-primary text-center font-bold border w-full rounded py-3 mt-10 text-white hover:bg-primaryHover hover:shadow-hoverButton">
-                SUBMIT
-              </div>
-            </a>
+            {/* ======input-end================================= */}
+            <Button
+              additionalClassName="w-full hover:bg-primaryHover"
+              bgColor="primary"
+              textColor="white"
+              onClick={() => {}}
+              title="SUBMIT"
+            />
           </form>
         </div>
       </div>
