@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import LoginSlider from "../../components/auth/Slider/LoginSlider";
+import LoginSlider from "../../components/slider/login-slider/LoginSlider";
 import LoginImage from "../../data/image-slider/login-image-slider-data.json";
-import { ILoginImage } from "../../components/auth/Slider/interface/ILoginImage";
+import { ILoginImage } from "../../components/slider/login-slider/interface/ILoginImage";
+import { signInWithGoogle } from "../../services/firebase/firebase";
+import { FcGoogle } from "react-icons/fc";
 
 const Login: React.FC = () => {
   const [loginImage] = useState<ILoginImage[]>(LoginImage);
@@ -17,12 +19,12 @@ const Login: React.FC = () => {
               Create an account
             </a>
           </p>
-
-          <a href="#">
-            <div className="bg-white text-center border w-full rounded py-3 mt-14 font-bold">
-              Login with Google
-            </div>
-          </a>
+          <button
+            onClick={signInWithGoogle}
+            className="bg-white text-slate-500 text-center border w-full rounded py-3 mt-10 font-semibold hover:shadow-hoverButton hover:text-slate-600 transition-all "
+          >
+            <FcGoogle className="inline mr-2 " size={20} /> Sign in with google
+          </button>
 
           <div className="relative py-4">
             <div className="absolute inset-0 flex">
@@ -40,6 +42,7 @@ const Login: React.FC = () => {
                 className="peer w-full p-3 rounded hover:ring-1 hover:ring-slate-300 focus:bg-white placeholder-transparent placeholder-shown:bg-slate-100 placeholder-shown:ring-none placeholder-shown:ring-0 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary ring-1 ring-slate-300 "
                 type="email"
                 placeholder="Email"
+                autoComplete="none"
                 id="emailInput"
               />
               <label
@@ -70,7 +73,7 @@ const Login: React.FC = () => {
             {/* ======input================================================ */}
 
             <a href="#">
-              <div className="bg-primary text-center font-bold border w-full rounded py-3 mt-10 text-white hover:bg-primaryHover">
+              <div className="bg-primary text-center font-bold border w-full rounded py-3 mt-10 text-white hover:bg-primaryHover hover:shadow-hoverButton">
                 SUBMIT
               </div>
             </a>

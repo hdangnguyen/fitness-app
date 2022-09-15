@@ -18,6 +18,9 @@ module.exports = {
         error: "#EE6F6E",
         warning: "#FCD969",
       },
+      boxShadow: {
+        hoverButton: "0px 0px 6px 0px rgba(0, 0, 0, 0.08)",
+      },
     },
   },
   plugins: [],

@@ -9,8 +9,6 @@ interface Props {
 const LoginSlider: React.FC<Props> = (props) => {
   const { loginImage } = props;
 
-  console.log("this is props from chiel", loginImage[1].image);
-
   const settings = {
     dots: true,
     infinite: true,
